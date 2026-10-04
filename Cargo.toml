@@ -1,0 +1,21 @@
+[package]
+name = "merkle-vector"
+version = "0.1.0"
+edition = "2024"
+description = "Persistent vector with canonical shape and cached Merkle identities, companion to merkle-champ"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/tabcomputing/merkle-vector"
+keywords = ["vector", "persistent", "merkle", "content-addressed", "immutable"]
+categories = ["data-structures"]
+
+[dependencies]
+# Shared value encodings (`Identify`, `Sink`) and, later, storage (`Objects`).
+# merkle-champ 0.2 is not yet published, hence the path.
+merkle-champ = { path = "../merkle-champ" }
+sha2 = "0.10"
+
+[profile.release]
+debug = false
+
+[dev-dependencies]
+sha2 = "0.10"
